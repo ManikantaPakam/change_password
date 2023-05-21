@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="{static 'css/style.css'}">-->
+</head>
+<body>
+<center>
+
+    <h3 style="margin-bottom: 30px;
+     font-size: 30px;
+     color: black;
+     text-transform: uppercase;
+     letter-spacing: 2px;">SignUp Form</h3>
+    {%for message in messages%}
+   <b>{{message}}</b><br>
+    {%endfor%}
+<form method="post" style="width: 500px;
+     height: 400px;
+     margin: 60px auto 0;
+     background: rgba(0,0,0,0.6);
+     text-align: center;
+     padding: 35px;
+     border: 3px solid #fff;
+     border-radius: 70px 0 70px 0;">
+    {% csrf_token %}
+    <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">UserName: </label>
+    <input type="text" name="username" id="username" placeholder="create a username" style=" width: 150px;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required>
+    <br>
+    <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Email: </label>
+    <input type="text" name="email" id="email" placeholder="your Email id" style="width: 150px;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required>
+    <br>
+    <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Password: </label>
+    <input type="password" name="pass1" id="pass1" placeholder="Create a Password" style="width: 150px;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required>
+    <br>
+    <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Confirm Password: </label>
+    <input type="password" name="pass2" id="pass2" placeholder="Enter your confirm password" style="width: 150px;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required>
+    <br>
+    <button type="submit" style="display: block;
+      height: 40px;
+      line-height: 40px;
+      background: red;
+      border-radius: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 3px;">SignUp</button><br>
+    <a href="login" style="color:yellow;">if you have an already account?</a>
+</form>
+
+</center>
+</body>
+</html>
